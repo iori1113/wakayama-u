@@ -1,0 +1,176 @@
+/* CSSのリセット（消さないでください） */
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p, div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Hiragino Kaku Gothic ProN W3', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+
+a {
+  text-decoration: none;
+  color : black;
+}
+
+.header-wrapper{
+  width : 1000px;
+  height : 80px;
+  top : 0px;
+}
+
+.header-logo p{
+  float  : left;
+  font-size: 29px;
+  padding : 0 15px;
+  line-height : 80px;
+}
+
+.sub-header{
+  float : right;
+  line-height : 80px;
+}
+
+.sub-header a{
+  padding : 10px;
+  margin : 20px;
+}
+
+.content{
+  display : flex;
+}
+
+.main-wrapper{
+    width : 1000px;
+}
+
+.main-content{
+  height : 600px;
+}
+
+.catchphrase{
+  float : left;
+  writing-mode: vertical-rl;
+  margin-left : 50px
+}
+
+.catchphrase p{
+  font-size : 60px;
+  padding : 20px;
+}
+
+.right-content{
+  float : right;
+  margin-right : 20px;
+  margin-top : 60px
+}
+
+.main-items {
+  display : block;
+
+}
+
+.main-items a{
+  display : block;
+  color : black;
+  font-size : 40px;
+  margin : 10px 0;
+  padding : 0 20px 0 40px;
+  border-bottom : solid 1px;
+  text-align : center;
+  transition: all 0.5s;
+}
+
+.main-items a:hover{
+  transform : translate(-100px,0);
+}
+
+.news {
+  display : block;
+  text-align : center;
+  font-size : 35px;
+  padding : 10px;
+  transition: all 0.5s;
+  border : solid 1px;
+  border-radius : 10px;
+}
+
+.news :hover{
+
+}
+
+.news-content li{
+  display : none;
+  opacity: 0;
+}
+
+.news :hover + .news-content li{
+  display : block;
+  animation: show 0.5s linear 0s;
+  opacity : 1;
+  color : red;
+}
+@keyframes show{
+  from{
+    opacity: 0;
+  }to{
+    opacity: 1;
+  }
+}
+
+.sub-contents-box{
+    text-align : center;
+    margin : 30px 30px;
+}
+
+.abstract p{
+  /*text-align : center;*/
+  font-size : 30px;
+  
+}
+
+.abstract-content{
+  display : inline-block;
+  width : 23%;
+  padding-top : 20px;
+  margin : 0 20px;
+  border : solid 1px;
+  border-radius: 10px;
+}
+.classroom{
+  background-image : url("images/classroom.jpg");
+  background-size : cover;
+}
+
+.course{
+  background-image : url("images/course.jpg");
+  background-size : cover;
+}
+
+.teacher{
+  background-image : url("images/teacher.jpg");
+  background-size : cover;
+}
+
+.content-explain {
+  padding : 10px;
+  font-weight : bold;
+  }
+
+/*フッター */
+.footer-wrapper {
+  width : 1000px;
+  height : 200px;
+}
+.footer-logo {
+  float : right;
+  margin-right : 20px;
+  }
+}
