@@ -1,0 +1,185 @@
+
+
+<link href="../css/style.css" media="all" rel="Stylesheet" type="text/css" /> 
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/base.js"></script>
+
+<script>
+    function fill_color(){
+    const color_code = "#efefef";
+    $(".week-0" + ".period-6").css("background-color", color_code);
+    $(".week-0" + ".period-7").css("background-color", color_code);
+    $(".week-0" + ".period-8").css("background-color", color_code);
+    $(".week-0" + ".period-9").css("background-color", color_code);
+    $(".week-0" + ".period-10").css("background-color", color_code);
+    for(let i = 1; i <= 5; i++){
+        $(".week-"+ i + ".period-1").css("background-color", color_code);
+        $(".week-"+ i + ".period-2").css("background-color", color_code);
+        $(".week-"+ i + ".period-3").css("background-color", color_code);
+        $(".week-"+ i + ".period-4").css("background-color", color_code);
+    }
+    $(".week-6" + ".period-10").css("background-color", color_code);
+}
+</script>
+
+
+
+
+  
+
+
+<style>
+
+
+
+    form {
+        margin: 50px auto;
+        width: 800px;
+        height: 400px;
+        box-shadow: 0 0 2px #3e3e3e;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .upload-area {
+        margin: auto;
+        width: 85%;
+        height: 300px;
+        position: relative;
+        border: 1px dotted rgba(0, 0, 0, .4);
+    }
+    .upload-area i {
+        position: absolute;
+        font-size: 120px;
+        opacity: .1;
+        width: 100%;
+        left: 0;
+        top: 80px;
+    }
+    .upload-area p {
+        width: 100%;
+        position: absolute;
+        top: 200px;
+        opacity: .8;
+    }
+
+    #input-files {
+        top: 0;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    #submit-btn {
+        background-color: rgba(108, 168, 255, .7);
+    }
+    #submit-btn:hover {
+        background-color: rgba(108, 168, 255, 1.0);
+    }
+
+    #delete-btn {
+        background-color: rgba(255, 50, 50, .7);
+    }
+    #delete-btn:hover {
+        background-color: rgba(255, 50, 50, 1.0);
+    }
+
+    #btns input{
+        display:inline;
+        font-weight: bold;
+        margin-top: 20px;
+        border-radius: 3px;
+        width: 200px;
+        height: 45px;
+        border: none;
+        box-shadow: 0 5px 0 rgba(0, 0, 0, 0.6);
+        opacity: .6;
+        cursor: pointer;
+    }
+
+    #btns input:active{
+        position: relative;
+        top: 5px;
+        box-shadow: none;
+    }
+
+    #btns p{
+        display:inline;
+        padding: 20px;
+    }
+
+    #content-header li{
+        cursor: pointer;
+        background-color : #faefdc;
+        display:inline;
+        width : 50%;
+        border : solid 2px black;
+        padding : 10px 20px;
+        margin : none;
+    }
+
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>トライプラスイオンモール和歌山校</title>
+
+</head>
+<body onload="init();" onunload = "init()">
+    <div id = "title">予定確認サービス</div>
+    <div id = "content">
+        <div id = "content-header">
+            <ul>
+                <li id = "schedule">3月の予定</li>
+                <li id = "others">その他</li>
+            <ul>
+        </div>
+        <hr>
+        <div class = "schedule-content" id = "schedule-2022-03" style= "display:block">
+            <table><tr><td id = 'time-table' rowspan = '2'>時限</td><td id = 'month-header' rowspan = '2'>3月</td><td class = 'day-index day-1'>1</td><td class = 'day-index day-2'>2</td><td class = 'day-index day-3'>3</td><td class = 'day-index day-4'>4</td><td class = 'day-index day-5'>5</td><td class = 'day-index day-6'>6</td><td class = 'day-index day-7'>7</td><td class = 'day-index day-8'>8</td><td class = 'day-index day-9'>9</td><td class = 'day-index day-10'>10</td><td class = 'day-index day-11'>11</td><td class = 'day-index day-12'>12</td><td class = 'day-index day-13'>13</td><td class = 'day-index day-14'>14</td><td class = 'day-index day-15'>15</td><td class = 'day-index day-16'>16</td><td class = 'day-index day-17'>17</td><td class = 'day-index day-18'>18</td><td class = 'day-index day-19'>19</td><td class = 'day-index day-20'>20</td><td class = 'day-index day-21'>21</td><td class = 'day-index day-22'>22</td><td class = 'day-index day-23'>23</td><td class = 'day-index day-24'>24</td><td class = 'day-index day-25'>25</td><td class = 'day-index day-26'>26</td><td class = 'day-index day-27'>27</td><td class = 'day-index day-28'>28</td><td class = 'day-index day-29'>29</td><td class = 'day-index day-30'>30</td><td class = 'day-index day-31'>31</td></tr><tr><td class = 'dayOfWeek-index week-2'>火</td><td class = 'dayOfWeek-index week-3'>水</td><td class = 'dayOfWeek-index week-4'>木</td><td class = 'dayOfWeek-index week-5'>金</td><td class = 'dayOfWeek-index week-6'>土</td><td class = 'dayOfWeek-index week-0'>日</td><td class = 'dayOfWeek-index week-1'>月</td><td class = 'dayOfWeek-index week-2'>火</td><td class = 'dayOfWeek-index week-3'>水</td><td class = 'dayOfWeek-index week-4'>木</td><td class = 'dayOfWeek-index week-5'>金</td><td class = 'dayOfWeek-index week-6'>土</td><td class = 'dayOfWeek-index week-0'>日</td><td class = 'dayOfWeek-index week-1'>月</td><td class = 'dayOfWeek-index week-2'>火</td><td class = 'dayOfWeek-index week-3'>水</td><td class = 'dayOfWeek-index week-4'>木</td><td class = 'dayOfWeek-index week-5'>金</td><td class = 'dayOfWeek-index week-6'>土</td><td class = 'dayOfWeek-index week-0'>日</td><td class = 'dayOfWeek-index week-1'>月</td><td class = 'dayOfWeek-index week-2'>火</td><td class = 'dayOfWeek-index week-3'>水</td><td class = 'dayOfWeek-index week-4'>木</td><td class = 'dayOfWeek-index week-5'>金</td><td class = 'dayOfWeek-index week-6'>土</td><td class = 'dayOfWeek-index week-0'>日</td><td class = 'dayOfWeek-index week-1'>月</td><td class = 'dayOfWeek-index week-2'>火</td><td class = 'dayOfWeek-index week-3'>水</td><td class = 'dayOfWeek-index week-4'>木</td></tr><tr><td class = 'period-index period-1'>1</td><td class = 'timeTable-index period-1'>11:40~13:10</td><td class = 'day-1 week-2 period-1'></td><td class = 'day-2 week-3 period-1'></td><td class = 'day-3 week-4 period-1'></td><td class = 'day-4 week-5 period-1'></td><td class = 'day-5 week-6 period-1'></td><td class = 'day-6 week-0 period-1'></td><td class = 'day-7 week-1 period-1'></td><td class = 'day-8 week-2 period-1'></td><td class = 'day-9 week-3 period-1'></td><td class = 'day-10 week-4 period-1'></td><td class = 'day-11 week-5 period-1'></td><td class = 'day-12 week-6 period-1'></td><td class = 'day-13 week-0 period-1'></td><td class = 'day-14 week-1 period-1'></td><td class = 'day-15 week-2 period-1'></td><td class = 'day-16 week-3 period-1'></td><td class = 'day-17 week-4 period-1'></td><td class = 'day-18 week-5 period-1'></td><td class = 'day-19 week-6 period-1'></td><td class = 'day-20 week-0 period-1'></td><td class = 'day-21 week-1 period-1'></td><td class = 'day-22 week-2 period-1'></td><td class = 'day-23 week-3 period-1'></td><td class = 'day-24 week-4 period-1'></td><td class = 'day-25 week-5 period-1'></td><td class = 'day-26 week-6 period-1'></td><td class = 'day-27 week-0 period-1'></td><td class = 'day-28 week-1 period-1'></td><td class = 'day-29 week-2 period-1'></td><td class = 'day-30 week-3 period-1'></td><td class = 'day-31 week-4 period-1'></td></tr><tr><td class = 'period-index period-2'>2</td><td class = 'timeTable-index period-2'>12:50~14:20</td><td class = 'day-1 week-2 period-2'></td><td class = 'day-2 week-3 period-2'></td><td class = 'day-3 week-4 period-2'></td><td class = 'day-4 week-5 period-2'></td><td class = 'day-5 week-6 period-2'></td><td class = 'day-6 week-0 period-2'></td><td class = 'day-7 week-1 period-2'></td><td class = 'day-8 week-2 period-2'></td><td class = 'day-9 week-3 period-2'></td><td class = 'day-10 week-4 period-2'></td><td class = 'day-11 week-5 period-2'></td><td class = 'day-12 week-6 period-2'></td><td class = 'day-13 week-0 period-2'></td><td class = 'day-14 week-1 period-2'></td><td class = 'day-15 week-2 period-2'></td><td class = 'day-16 week-3 period-2'></td><td class = 'day-17 week-4 period-2'></td><td class = 'day-18 week-5 period-2'></td><td class = 'day-19 week-6 period-2'></td><td class = 'day-20 week-0 period-2'></td><td class = 'day-21 week-1 period-2'></td><td class = 'day-22 week-2 period-2'></td><td class = 'day-23 week-3 period-2'></td><td class = 'day-24 week-4 period-2'></td><td class = 'day-25 week-5 period-2'></td><td class = 'day-26 week-6 period-2'>理科</td><td class = 'day-27 week-0 period-2'></td><td class = 'day-28 week-1 period-2'></td><td class = 'day-29 week-2 period-2'></td><td class = 'day-30 week-3 period-2'></td><td class = 'day-31 week-4 period-2'></td></tr><tr><td class = 'period-index period-3'>3</td><td class = 'timeTable-index period-3'>14:00~15:30</td><td class = 'day-1 week-2 period-3'></td><td class = 'day-2 week-3 period-3'></td><td class = 'day-3 week-4 period-3'></td><td class = 'day-4 week-5 period-3'></td><td class = 'day-5 week-6 period-3'></td><td class = 'day-6 week-0 period-3'></td><td class = 'day-7 week-1 period-3'></td><td class = 'day-8 week-2 period-3'></td><td class = 'day-9 week-3 period-3'></td><td class = 'day-10 week-4 period-3'></td><td class = 'day-11 week-5 period-3'></td><td class = 'day-12 week-6 period-3'></td><td class = 'day-13 week-0 period-3'></td><td class = 'day-14 week-1 period-3'></td><td class = 'day-15 week-2 period-3'></td><td class = 'day-16 week-3 period-3'></td><td class = 'day-17 week-4 period-3'></td><td class = 'day-18 week-5 period-3'></td><td class = 'day-19 week-6 period-3'></td><td class = 'day-20 week-0 period-3'></td><td class = 'day-21 week-1 period-3'></td><td class = 'day-22 week-2 period-3'></td><td class = 'day-23 week-3 period-3'></td><td class = 'day-24 week-4 period-3'></td><td class = 'day-25 week-5 period-3'></td><td class = 'day-26 week-6 period-3'></td><td class = 'day-27 week-0 period-3'></td><td class = 'day-28 week-1 period-3'></td><td class = 'day-29 week-2 period-3'></td><td class = 'day-30 week-3 period-3'></td><td class = 'day-31 week-4 period-3'></td></tr><tr><td class = 'period-index period-4'>4</td><td class = 'timeTable-index period-4'>14:50~16:20</td><td class = 'day-1 week-2 period-4'></td><td class = 'day-2 week-3 period-4'></td><td class = 'day-3 week-4 period-4'></td><td class = 'day-4 week-5 period-4'></td><td class = 'day-5 week-6 period-4'></td><td class = 'day-6 week-0 period-4'></td><td class = 'day-7 week-1 period-4'></td><td class = 'day-8 week-2 period-4'></td><td class = 'day-9 week-3 period-4'></td><td class = 'day-10 week-4 period-4'></td><td class = 'day-11 week-5 period-4'></td><td class = 'day-12 week-6 period-4'></td><td class = 'day-13 week-0 period-4'></td><td class = 'day-14 week-1 period-4'></td><td class = 'day-15 week-2 period-4'></td><td class = 'day-16 week-3 period-4'></td><td class = 'day-17 week-4 period-4'></td><td class = 'day-18 week-5 period-4'></td><td class = 'day-19 week-6 period-4'></td><td class = 'day-20 week-0 period-4'></td><td class = 'day-21 week-1 period-4'></td><td class = 'day-22 week-2 period-4'></td><td class = 'day-23 week-3 period-4'></td><td class = 'day-24 week-4 period-4'></td><td class = 'day-25 week-5 period-4'></td><td class = 'day-26 week-6 period-4'></td><td class = 'day-27 week-0 period-4'></td><td class = 'day-28 week-1 period-4'></td><td class = 'day-29 week-2 period-4'></td><td class = 'day-30 week-3 period-4'></td><td class = 'day-31 week-4 period-4'></td></tr><tr><td class = 'period-index period-5'>5</td><td class = 'timeTable-index period-5'>16:00~17:30</td><td class = 'day-1 week-2 period-5'></td><td class = 'day-2 week-3 period-5'></td><td class = 'day-3 week-4 period-5'></td><td class = 'day-4 week-5 period-5'></td><td class = 'day-5 week-6 period-5'></td><td class = 'day-6 week-0 period-5'>数学</td><td class = 'day-7 week-1 period-5'></td><td class = 'day-8 week-2 period-5'></td><td class = 'day-9 week-3 period-5'></td><td class = 'day-10 week-4 period-5'></td><td class = 'day-11 week-5 period-5'></td><td class = 'day-12 week-6 period-5'></td><td class = 'day-13 week-0 period-5'>数学</td><td class = 'day-14 week-1 period-5'></td><td class = 'day-15 week-2 period-5'></td><td class = 'day-16 week-3 period-5'></td><td class = 'day-17 week-4 period-5'></td><td class = 'day-18 week-5 period-5'></td><td class = 'day-19 week-6 period-5'></td><td class = 'day-20 week-0 period-5'>数学</td><td class = 'day-21 week-1 period-5'></td><td class = 'day-22 week-2 period-5'></td><td class = 'day-23 week-3 period-5'></td><td class = 'day-24 week-4 period-5'></td><td class = 'day-25 week-5 period-5'></td><td class = 'day-26 week-6 period-5'></td><td class = 'day-27 week-0 period-5'></td><td class = 'day-28 week-1 period-5'></td><td class = 'day-29 week-2 period-5'></td><td class = 'day-30 week-3 period-5'></td><td class = 'day-31 week-4 period-5'></td></tr><tr><td class = 'period-index period-6'>6</td><td class = 'timeTable-index period-6'>17:10~18:40</td><td class = 'day-1 week-2 period-6'></td><td class = 'day-2 week-3 period-6'></td><td class = 'day-3 week-4 period-6'></td><td class = 'day-4 week-5 period-6'></td><td class = 'day-5 week-6 period-6'></td><td class = 'day-6 week-0 period-6'></td><td class = 'day-7 week-1 period-6'></td><td class = 'day-8 week-2 period-6'></td><td class = 'day-9 week-3 period-6'></td><td class = 'day-10 week-4 period-6'></td><td class = 'day-11 week-5 period-6'></td><td class = 'day-12 week-6 period-6'></td><td class = 'day-13 week-0 period-6'></td><td class = 'day-14 week-1 period-6'></td><td class = 'day-15 week-2 period-6'></td><td class = 'day-16 week-3 period-6'></td><td class = 'day-17 week-4 period-6'></td><td class = 'day-18 week-5 period-6'></td><td class = 'day-19 week-6 period-6'></td><td class = 'day-20 week-0 period-6'></td><td class = 'day-21 week-1 period-6'></td><td class = 'day-22 week-2 period-6'></td><td class = 'day-23 week-3 period-6'></td><td class = 'day-24 week-4 period-6'></td><td class = 'day-25 week-5 period-6'></td><td class = 'day-26 week-6 period-6'></td><td class = 'day-27 week-0 period-6'></td><td class = 'day-28 week-1 period-6'></td><td class = 'day-29 week-2 period-6'></td><td class = 'day-30 week-3 period-6'></td><td class = 'day-31 week-4 period-6'>理科</td></tr><tr><td class = 'period-index period-7'>7</td><td class = 'timeTable-index period-7'>17:45~19:15</td><td class = 'day-1 week-2 period-7'></td><td class = 'day-2 week-3 period-7'></td><td class = 'day-3 week-4 period-7'></td><td class = 'day-4 week-5 period-7'></td><td class = 'day-5 week-6 period-7'></td><td class = 'day-6 week-0 period-7'></td><td class = 'day-7 week-1 period-7'></td><td class = 'day-8 week-2 period-7'></td><td class = 'day-9 week-3 period-7'></td><td class = 'day-10 week-4 period-7'></td><td class = 'day-11 week-5 period-7'>数学</td><td class = 'day-12 week-6 period-7'></td><td class = 'day-13 week-0 period-7'></td><td class = 'day-14 week-1 period-7'></td><td class = 'day-15 week-2 period-7'></td><td class = 'day-16 week-3 period-7'>数学</td><td class = 'day-17 week-4 period-7'></td><td class = 'day-18 week-5 period-7'></td><td class = 'day-19 week-6 period-7'></td><td class = 'day-20 week-0 period-7'></td><td class = 'day-21 week-1 period-7'></td><td class = 'day-22 week-2 period-7'></td><td class = 'day-23 week-3 period-7'></td><td class = 'day-24 week-4 period-7'></td><td class = 'day-25 week-5 period-7'></td><td class = 'day-26 week-6 period-7'></td><td class = 'day-27 week-0 period-7'></td><td class = 'day-28 week-1 period-7'></td><td class = 'day-29 week-2 period-7'></td><td class = 'day-30 week-3 period-7'>英語</td><td class = 'day-31 week-4 period-7'></td></tr><tr><td class = 'period-index period-8'>8</td><td class = 'timeTable-index period-8'>18:15~19:15</td><td class = 'day-1 week-2 period-8'></td><td class = 'day-2 week-3 period-8'></td><td class = 'day-3 week-4 period-8'></td><td class = 'day-4 week-5 period-8'></td><td class = 'day-5 week-6 period-8'></td><td class = 'day-6 week-0 period-8'></td><td class = 'day-7 week-1 period-8'></td><td class = 'day-8 week-2 period-8'>国語</td><td class = 'day-9 week-3 period-8'></td><td class = 'day-10 week-4 period-8'></td><td class = 'day-11 week-5 period-8'></td><td class = 'day-12 week-6 period-8'></td><td class = 'day-13 week-0 period-8'></td><td class = 'day-14 week-1 period-8'></td><td class = 'day-15 week-2 period-8'>国語</td><td class = 'day-16 week-3 period-8'></td><td class = 'day-17 week-4 period-8'></td><td class = 'day-18 week-5 period-8'></td><td class = 'day-19 week-6 period-8'></td><td class = 'day-20 week-0 period-8'></td><td class = 'day-21 week-1 period-8'></td><td class = 'day-22 week-2 period-8'></td><td class = 'day-23 week-3 period-8'></td><td class = 'day-24 week-4 period-8'></td><td class = 'day-25 week-5 period-8'></td><td class = 'day-26 week-6 period-8'></td><td class = 'day-27 week-0 period-8'></td><td class = 'day-28 week-1 period-8'>社会</td><td class = 'day-29 week-2 period-8'></td><td class = 'day-30 week-3 period-8'></td><td class = 'day-31 week-4 period-8'></td></tr><tr><td class = 'period-index period-9'>9</td><td class = 'timeTable-index period-9'>19:20~20:50</td><td class = 'day-1 week-2 period-9'></td><td class = 'day-2 week-3 period-9'></td><td class = 'day-3 week-4 period-9'></td><td class = 'day-4 week-5 period-9'></td><td class = 'day-5 week-6 period-9'></td><td class = 'day-6 week-0 period-9'></td><td class = 'day-7 week-1 period-9'></td><td class = 'day-8 week-2 period-9'></td><td class = 'day-9 week-3 period-9'></td><td class = 'day-10 week-4 period-9'></td><td class = 'day-11 week-5 period-9'></td><td class = 'day-12 week-6 period-9'></td><td class = 'day-13 week-0 period-9'></td><td class = 'day-14 week-1 period-9'></td><td class = 'day-15 week-2 period-9'></td><td class = 'day-16 week-3 period-9'></td><td class = 'day-17 week-4 period-9'></td><td class = 'day-18 week-5 period-9'></td><td class = 'day-19 week-6 period-9'></td><td class = 'day-20 week-0 period-9'></td><td class = 'day-21 week-1 period-9'></td><td class = 'day-22 week-2 period-9'></td><td class = 'day-23 week-3 period-9'></td><td class = 'day-24 week-4 period-9'></td><td class = 'day-25 week-5 period-9'></td><td class = 'day-26 week-6 period-9'>理科</td><td class = 'day-27 week-0 period-9'></td><td class = 'day-28 week-1 period-9'></td><td class = 'day-29 week-2 period-9'></td><td class = 'day-30 week-3 period-9'></td><td class = 'day-31 week-4 period-9'></td></tr><tr><td class = 'period-index period-10'>10</td><td class = 'timeTable-index period-10'>20:30~22:00</td><td class = 'day-1 week-2 period-10'></td><td class = 'day-2 week-3 period-10'></td><td class = 'day-3 week-4 period-10'></td><td class = 'day-4 week-5 period-10'></td><td class = 'day-5 week-6 period-10'></td><td class = 'day-6 week-0 period-10'></td><td class = 'day-7 week-1 period-10'></td><td class = 'day-8 week-2 period-10'></td><td class = 'day-9 week-3 period-10'></td><td class = 'day-10 week-4 period-10'></td><td class = 'day-11 week-5 period-10'></td><td class = 'day-12 week-6 period-10'></td><td class = 'day-13 week-0 period-10'></td><td class = 'day-14 week-1 period-10'></td><td class = 'day-15 week-2 period-10'></td><td class = 'day-16 week-3 period-10'></td><td class = 'day-17 week-4 period-10'></td><td class = 'day-18 week-5 period-10'></td><td class = 'day-19 week-6 period-10'></td><td class = 'day-20 week-0 period-10'></td><td class = 'day-21 week-1 period-10'></td><td class = 'day-22 week-2 period-10'></td><td class = 'day-23 week-3 period-10'></td><td class = 'day-24 week-4 period-10'></td><td class = 'day-25 week-5 period-10'></td><td class = 'day-26 week-6 period-10'></td><td class = 'day-27 week-0 period-10'></td><td class = 'day-28 week-1 period-10'></td><td class = 'day-29 week-2 period-10'></td><td class = 'day-30 week-3 period-10'></td><td class = 'day-31 week-4 period-10'></td></tr></table>            <script> fill_color(); </script>
+        </div>
+        <div id = "other-content" style = "display:none">
+            <h2>コンテンツ無し</h2>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function init(){
+        if(document.getElementById("input-files").value){
+            window.location.href = "userPage.php";
+        }
+    }
+
+    $("#schedule").click(function(){
+        $("#schedule-2022-03").css("display", "block");
+        $("#other-content").css("display", "none");
+        
+    });
+
+    $("#others").click(function(){
+        $("#schedule-2022-03").css("display", "none");
+        $("#other-content").css("display", "block");
+    });
+
+    function fill_color(){
+    const color_code = "#efefef";
+    $(".week-0" + ".period-6").css("background-color", color_code);
+    $(".week-0" + ".period-7").css("background-color", color_code);
+    $(".week-0" + ".period-8").css("background-color", color_code);
+    $(".week-0" + ".period-9").css("background-color", color_code);
+    $(".week-0" + ".period-10").css("background-color", color_code);
+    for(let i = 1; i <= 5; i++){
+        $(".week-"+ i + ".period-1").css("background-color", color_code);
+        $(".week-"+ i + ".period-2").css("background-color", color_code);
+        $(".week-"+ i + ".period-3").css("background-color", color_code);
+        $(".week-"+ i + ".period-4").css("background-color", color_code);
+    }
+    $(".week-6" + ".period-10").css("background-color", color_code);
+}
+</script>

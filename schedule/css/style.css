@@ -1,0 +1,36 @@
+/*スケジュールカレンダー周り*/
+
+.schedule-content {
+    padding-top : 20px;
+    padding-left : 40px;
+    
+}
+
+table {
+    border : 2;
+    border-collapse: collapse;
+    border : solid 3px;
+}
+
+tr, td{
+    width : 25px;
+    height : 45px;
+    border : solid 1px;
+    text-align : center;
+}
+
+#month-header{
+    font-size : 20px;
+}
+
+#month-header, #time-table, .day-index, .dayOfWeek-index {
+    background-color : #e6e6e6;
+}
+
+.timeTable-index {
+    width : 130px;
+}
+
+.day-index, .dayOfWeek-index {
+    max-height : 20px;
+}
