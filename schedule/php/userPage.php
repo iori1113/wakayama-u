@@ -2,27 +2,8 @@
 require("function.php");
 ?>
 
-<link href="../css/style.css" media="all" rel="Stylesheet" type="text/css" /> 
 <script src="../js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../js/base.js"></script>
-
-<script>
-    function fill_color(){
-    const color_code = "#efefef";
-    $(".week-0" + ".period-6").css("background-color", color_code);
-    $(".week-0" + ".period-7").css("background-color", color_code);
-    $(".week-0" + ".period-8").css("background-color", color_code);
-    $(".week-0" + ".period-9").css("background-color", color_code);
-    $(".week-0" + ".period-10").css("background-color", color_code);
-    for(let i = 1; i <= 5; i++){
-        $(".week-"+ i + ".period-1").css("background-color", color_code);
-        $(".week-"+ i + ".period-2").css("background-color", color_code);
-        $(".week-"+ i + ".period-3").css("background-color", color_code);
-        $(".week-"+ i + ".period-4").css("background-color", color_code);
-    }
-    $(".week-6" + ".period-10").css("background-color", color_code);
-}
-</script>
 
 
 
@@ -33,107 +14,23 @@ if (!isset($_SESSION['user_id'])){
     return;
 }
     $year = "2022";
-    $month = "03";
+    $month = "05";
     $file_id = $_SESSION['file_name'];
-    $schedule_data = getJsonData($file_id, $year, $month);
-    
+    $schedule_data = getjson("itou_shiori", "2022", "05");
   ?>
 
   
 
 
 <style>
-
-
-
-    form {
-        margin: 50px auto;
-        width: 800px;
-        height: 400px;
-        box-shadow: 0 0 2px #3e3e3e;
-        padding: 30px;
-        text-align: center;
+    .schedule-content{
+        overflow-x:scroll;
     }
 
-    .upload-area {
-        margin: auto;
-        width: 85%;
-        height: 300px;
-        position: relative;
-        border: 1px dotted rgba(0, 0, 0, .4);
+    #title{
+        border-bottom: double 5px #0b41a0;
+        margin-bottom: 5rem;
     }
-    .upload-area i {
-        position: absolute;
-        font-size: 120px;
-        opacity: .1;
-        width: 100%;
-        left: 0;
-        top: 80px;
-    }
-    .upload-area p {
-        width: 100%;
-        position: absolute;
-        top: 200px;
-        opacity: .8;
-    }
-
-    #input-files {
-        top: 0;
-        left: 0;
-        opacity: 0;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-    }
-
-    #submit-btn {
-        background-color: rgba(108, 168, 255, .7);
-    }
-    #submit-btn:hover {
-        background-color: rgba(108, 168, 255, 1.0);
-    }
-
-    #delete-btn {
-        background-color: rgba(255, 50, 50, .7);
-    }
-    #delete-btn:hover {
-        background-color: rgba(255, 50, 50, 1.0);
-    }
-
-    #btns input{
-        display:inline;
-        font-weight: bold;
-        margin-top: 20px;
-        border-radius: 3px;
-        width: 200px;
-        height: 45px;
-        border: none;
-        box-shadow: 0 5px 0 rgba(0, 0, 0, 0.6);
-        opacity: .6;
-        cursor: pointer;
-    }
-
-    #btns input:active{
-        position: relative;
-        top: 5px;
-        box-shadow: none;
-    }
-
-    #btns p{
-        display:inline;
-        padding: 20px;
-    }
-
-    #content-header li{
-        cursor: pointer;
-        background-color : #faefdc;
-        display:inline;
-        width : 50%;
-        border : solid 2px black;
-        padding : 10px 20px;
-        margin : none;
-    }
-
 </style>
 
 <!DOCTYPE html>
@@ -141,24 +38,23 @@ if (!isset($_SESSION['user_id'])){
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>トライプラスイオンモール和歌山校</title>
-
+  <link rel="stylesheet" href="../css/skeleton.css">
+  <link rel="stylesheet" href="../css/custom.css">
 </head>
 <body onload="init();" onunload = "init()">
-    <div id = "title">予定確認サービス</div>
-    <div id = "content">
-        <div id = "content-header">
-            <ul>
-                <li id = "schedule">3月の予定</li>
-                <li id = "others">その他</li>
-            <ul>
-        </div>
-        <hr>
-        <div class = "schedule-content" id = "schedule-2022-03" style= "display:block">
-            <?php echo outputSchedule($schedule_data,$year,$month); ?>
-            <script> fill_color(); </script>
-        </div>
-        <div id = "other-content" style = "display:none">
-            <h2>コンテンツ無し</h2>
+    <div class="section">
+        <h1 id = "title">予定確認サービス</h1>
+        <div id = "content">
+            <div id = "content-header">
+                <a class="button button-primary" id="schedule" href="#">3月の予定</a>
+                <a class="button button-primary" id="others" href="#">その他</a>
+            </div>
+            <hr>
+            <div class = "schedule-content" id = "schedule-2022-03" style= "display:block">
+            </div>
+            <div id = "other-content" style = "display:none">
+                <h2>コンテンツ無し</h2>
+            </div>
         </div>
     </div>
 </body>
@@ -171,6 +67,95 @@ if (!isset($_SESSION['user_id'])){
         }
     }
 
+    window.onload = function(){
+        let schedule_data = <?php echo $schedule_data; ?>;
+        let year = <?php echo $year; ?>;
+        let month = <?php echo $month; ?>;
+        let timeTable = {
+            1:  "11:40~13:10",
+            2:  "12:50~14:20",
+            3:  "14:00~15:30",
+            4:  "14:50~16:20",
+            5:  "16:00~17:30",
+            6:  "17:10~18:40",
+            7:  "17:45~19:15",
+            8:  "18:15~19:15",
+            9:  "19:20~20:50",
+            10: "20:30~22:00"
+        };
+
+        let dayOfWeek = ["日","月","火","水","木","金","土"];
+
+        let numDays = 0;
+        for(let i = 0; i < schedule_data.length; i++){
+            if(numDays < schedule_data[i]["day"]){
+                numDays = schedule_data[i]["day"];
+            }
+        }
+
+        //当月1日の曜日を取得
+        let date = year + "-" + month + "-01";
+        let datetime = new Date(date);
+        let wTmp = datetime.getDay();
+
+        //最大時限数の取得
+        let numPeriods = 0;
+        for(let i = 0; i < Object.keys(schedule_data).length; i++){
+            if(numPeriods < schedule_data[i]["period"]){
+                numPeriods = schedule_data[i]["period"];
+            }
+        }
+        
+        //table作成
+        let schedule = document.getElementById('schedule-2022-03');
+        let table = createTag('table', schedule, "");
+        
+        //head
+        let tr_day = createTag('tr', table, "");
+        let tr_dow = createTag('tr', table, "");
+        createTag('th', tr_day, "時限").rowSpan = "2";
+        createTag('th', tr_day, month+"月").rowSpan = "2";
+        for(let i = 0; i < numDays; i++){
+            let th_day = createTag('th', tr_day, i + 1);
+            let th_dow = createTag('th', tr_dow, dayOfWeek[(i + wTmp) % 7]);
+            th_day.style.borderCollapse = "collapse";
+            th_dow.style.borderCollapse = "collapse";
+            th_dow.style.borderBottom = 'thick inset #0b41a0';
+            if(i % 2 == 0){
+                th_day.style.color = '#0b41a0';
+                th_dow.style.color = '#0b41a0';
+            }
+        }
+
+        //body
+        let count = 0;
+        for(let i = 1; i <= numPeriods; i++){
+            let tr = createTag('tr', table, "");
+            createTag('th', tr,  i);
+            createTag('th', tr, timeTable[i]);
+            for(let j=1; j<= numDays; j++){   
+                let td = createTag('td', tr, schedule_data[count]["subject"]);
+                count++;
+                if(j % 2==1){
+                    td.style.color = '#0b41a0';
+                }
+            }
+            if(i % 2==0){
+                    tr.style.backgroundColor = '#f5f5f5';
+            }else{
+                tr.style.backgroundColor = '#e1e1e1';
+            }
+        }         
+    }
+
+    function createTag(tagName, parentTag, content){
+        let newTag = document.createElement(tagName);
+        newTag.textContent = content;
+        parentTag.appendChild(newTag);
+        return newTag;
+    }
+    
+
     $("#schedule").click(function(){
         $("#schedule-2022-03").css("display", "block");
         $("#other-content").css("display", "none");
@@ -182,19 +167,4 @@ if (!isset($_SESSION['user_id'])){
         $("#other-content").css("display", "block");
     });
 
-    function fill_color(){
-    const color_code = "#efefef";
-    $(".week-0" + ".period-6").css("background-color", color_code);
-    $(".week-0" + ".period-7").css("background-color", color_code);
-    $(".week-0" + ".period-8").css("background-color", color_code);
-    $(".week-0" + ".period-9").css("background-color", color_code);
-    $(".week-0" + ".period-10").css("background-color", color_code);
-    for(let i = 1; i <= 5; i++){
-        $(".week-"+ i + ".period-1").css("background-color", color_code);
-        $(".week-"+ i + ".period-2").css("background-color", color_code);
-        $(".week-"+ i + ".period-3").css("background-color", color_code);
-        $(".week-"+ i + ".period-4").css("background-color", color_code);
-    }
-    $(".week-6" + ".period-10").css("background-color", color_code);
-}
 </script>
