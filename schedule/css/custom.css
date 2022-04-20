@@ -1,0 +1,40 @@
+body{
+    font-family: kosugi;
+    background-color: #eeeff1;
+    width:100vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.section{
+    width:90vw;
+    background-color: white;
+    text-align: center;  
+    margin: 6rem 3rem;
+}
+
+.login-form{
+    margin: 8rem 0;
+    border-radius: 1rem;
+}
+.login-title{
+    border-bottom: double 5px #0b41a0;
+    margin-bottom: 5rem;
+}
+.en{
+    font-family: sans-serif;
+}
+@media(max-width: 1199px){
+    .section{
+        width:90vw;
+    } 
+}
+
+@media(min-width: 1200px){
+}
+
+@font-face{
+    font-family: 'kosugi';
+    src: url(Kosugi-Regular.ttf);
+}
+
