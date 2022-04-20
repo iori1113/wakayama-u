@@ -1,103 +1,37 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>トライプラスイオンモール和歌山校</title>
-  <link rel="stylesheet" href="styleSub.css">
-  <!-- ここでFont Awesomeを読み込んでください -->
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <!-- ここにコードを書いていきましょう -->
-  <header>
-    <div class = "header-wrapper">
-     <div class = "header-logo">
-       <p>トライプラスイオンモール和歌山校</p>
-     </div>
-     <div class = sub-header>
-       <a href = ''>アクセス</a>
-       <a href = ''>SNSリンク</a>
-       <a href = ''>問い合わせ</a>
+    <div class="section"> 
+      <h1 id = "title">トライプラスイオンモール和歌山校 <br>予定表確認サービス_β版</h1>
+      <div class = "login-form">
+          <h3 class = "login-title en">Login</h3>
+          <form method = "POST" action = "index.php">
+            <div>
+              <label class ="en" for="user_name en"> UserName </label>
+              <input type = "text" name = "user_name">
+              <label class ="en" for="pass" > Password  </label>
+              <input type = "password" name = "pass">
+            </div>
+            <input class = "button-primary login-button" type = "submit" value = "ログイン">
+          </form>
+          <p style ='color : red;font-weight : bold;'>パスワードまたはユーザ名が違います。 </p>
+          <a href = "./php/passSetting/firstSetting.php?status=0">初回ログインの方はこちら</a> <br>
+          <a href = "./php/passSetting/confirmInfo.php?">ID、パスワードを忘れた方</a>
       </div>
     </div>
-
-  </header>
-
-
-  <div class = "content">
-
-    <div class = "main-wrapper">
-      <!--メインコンテンツ -->
-      <hr>
-      <div class = "main-content">
-        <div class = "catchphrase">
-          <p>Shape your future.</p>
-        </div>
-        <div class = "right-content">
-          <div class = "main-items">
-            <a href = "">当塾の強み</a>
-            <a href = "">進学実績</a>
-            <a href = "">成績アップ実績</a>
-          </div>
-          <div class = "news">
-            <p>News</p>
-            <div class = "news-content">
-              <ul>
-                <li>infomation1</li>
-                <li>infomation2</li>
-                <li>infomation3</li>
-                <li>infomation4</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <hr>
-        <!--サブコンテンツ -->
-      <div class = "sub-content">
-        <div class = "abstract">
-          <p>abstract</p>
-        </div>
-        <div class = "sub-contents-box">
-          <a href = "">
-            <div class = "abstract-content classroom">
-              <h3>校舎紹介</h3>
-              <div class = "content-explain">
-                <p>イオンモール内、学習環境についてはこちら。</p>
-              </div>
-            </div>
-          </a>
-          <a href = "">
-            <div class = "abstract-content course">
-              <h3>コース紹介</h3>
-              <div class = "content-explain">
-                <p>学年、目標によるコースについてはこちら</p>
-              </div>
-            </div>
-          </a>
-          <a href = "">
-            <div class = "abstract-content teacher">
-              <h3>在籍講師の紹介</h3>
-                <div class = "content-explain">
-                  <p>当校に在籍している講師の紹介です。</p>
-                </div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <hr>
-    </div>
-  </div>
-
-
-  <footer>
-    <div class = "footer-wrapper">
-      <div class = "footer-logo">
-        <p>トライプラスイオンモール和歌山校</p>
-        <p>学びの森株式会社</p>
-      </div>
-    </div>
-  </footer>
-
 </body>
 </html>
+
+
+<script src="/schedule/js/jquery-3.6.0.min.js"></script>
+<script src="/schedule/js/base.js"></script>
+
