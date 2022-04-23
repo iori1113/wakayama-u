@@ -24,8 +24,8 @@
           switch ($roll){
             case 0 : header('Location: ./php/maintain.php'); break;
             case 1 : header('Location: ./php/admin.php'); break;
-            case 2 : header('Location: ./php/userPage.php'); break;
-            //case 3 : header('Location: ./settingInfo.php/studentTop.php'); break;
+            case 2 : header('Location: ./php/userPage_student.php'); break;
+            case 3 : header('Location: ./php/userPage_teacher.php'); break;
           }
           break;
         }

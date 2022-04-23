@@ -45,6 +45,12 @@
         
         //$schedule_json = file_get_contents($file_pass);
         //$schedule_json = gcsAccess($file_pass);
-        return $schedule_json;
+
+        if($schedule_json){
+            return $schedule_json;
+        }else{
+            header("location: ../error.php");
+        }
+        
     }
 ?>
